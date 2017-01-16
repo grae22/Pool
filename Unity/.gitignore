@@ -28,3 +28,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Exclude GameLib.dll from assets folder.
+/Assets/GameLib.*
+
+# Exclude Unity test tools.
+/Assets/UnityTestTools/

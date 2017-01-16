@@ -1,0 +1,15 @@
+# VS
+*.suo
+
+# GameLib
+/GameLib/obj/
+/GameLib/bin/
+
+# GameLib_Test
+/GameLib_Test/TestResult.xml
+/GameLib_Test/obj/
+/GameLib_Test/bin/
+/GameLib_Test/GeneratedReports/
+
+# Nuget packages.
+/packages/
