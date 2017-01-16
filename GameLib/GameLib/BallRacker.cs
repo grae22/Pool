@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameLib
@@ -12,15 +11,30 @@ namespace GameLib
       IBallCollection balls,
       ITablePositions tablePositions )
     {
-      // Cue ball.
+      PlaceCueBall( balls, tablePositions );
+      PlaceEightBall( balls, tablePositions );
+    }
+
+    //-------------------------------------------------------------------------
+
+    private static void PlaceCueBall(
+      IBallCollection balls,
+      ITablePositions tablePositions )
+    {
       if( balls.CueBall == null )
       {
         throw new Exception( "Null cue ball." );
       }
 
       balls.CueBall.Position = tablePositions.CueBallStartPosition;
+    }
 
-      // Eight ball.
+    //-------------------------------------------------------------------------
+
+    private static void PlaceEightBall(
+      IBallCollection balls,
+      ITablePositions tablePositions )
+    {
       if( balls.EightBall == null )
       {
         throw new Exception( "Null eight ball." );
