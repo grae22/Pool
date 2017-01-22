@@ -36,14 +36,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ball.cs" />
-    <Compile Include="BallRacker.cs" />
-    <Compile Include="BallSpawner.cs" />
-    <Compile Include="BallCollection.cs" />
-    <Compile Include="IBallCollection.cs" />
-    <Compile Include="IColouredBall.cs" />
-    <Compile Include="INumberedBall.cs" />
-    <Compile Include="ITablePositions.cs" />
+    <Compile Include="Balls\Ball.cs" />
+    <Compile Include="Balls\BallRacker.cs" />
+    <Compile Include="Balls\BallSpawner.cs" />
+    <Compile Include="Balls\BallCollection.cs" />
+    <Compile Include="Balls\IBallCollection.cs" />
+    <Compile Include="Balls\IColouredBall.cs" />
+    <Compile Include="Balls\INumberedBall.cs" />
+    <Compile Include="Tables\ITablePositions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using GameLib;
+using GameLib.Balls;
 
 namespace GameLib_Test
 {

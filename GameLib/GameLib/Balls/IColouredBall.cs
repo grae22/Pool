@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace GameLib
+namespace GameLib.Balls
 {
   public interface IColouredBall
   {

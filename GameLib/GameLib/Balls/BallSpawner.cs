@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameLib
+namespace GameLib.Balls
 {
-  class BallSpawner
+  public class BallSpawner
   {
     //---------------------------------------------------------------------------
 

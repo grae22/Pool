@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-
-namespace GameLib
+﻿namespace GameLib.Balls
 {
-  interface ITablePositions
+  public interface INumberedBall
   {
     //-------------------------------------------------------------------------
 
-    Vector3 CueBallStartPosition { get; }
-    Vector3 EightBallStartPosition { get; }
+    int Number { get; }
 
     //-------------------------------------------------------------------------
   }

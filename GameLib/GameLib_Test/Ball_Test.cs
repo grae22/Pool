@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 using UnityEngine;
-using GameLib;
+using GameLib.Balls;
 
 namespace Game_Test
 {

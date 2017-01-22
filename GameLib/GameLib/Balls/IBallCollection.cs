@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace GameLib
+namespace GameLib.Balls
 {
-  interface IBallCollection
+  public interface IBallCollection
   {
     //-------------------------------------------------------------------------
 

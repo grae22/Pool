@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace GameLib
+namespace GameLib.Balls
 {
-  class BallCollection : IBallCollection
+  public class BallCollection : IBallCollection
   {
     //-------------------------------------------------------------------------
 

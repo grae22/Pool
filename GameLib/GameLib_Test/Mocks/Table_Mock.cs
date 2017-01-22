@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using GameLib;
+using GameLib.Tables;
 
 namespace GameLib_Test.Mocks
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
-using GameLib;
+using GameLib.Balls;
 using GameLib_Test.Mocks;
 
 namespace GameLib_Test
