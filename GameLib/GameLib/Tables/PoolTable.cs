@@ -2,7 +2,7 @@
 
 namespace GameLib.Tables
 {
-  class PoolTable : ITable
+  public class PoolTable : ITable
   {
     //-------------------------------------------------------------------------
 
