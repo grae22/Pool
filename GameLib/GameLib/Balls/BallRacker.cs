@@ -9,14 +9,17 @@ namespace GameLib.Balls
     //-------------------------------------------------------------------------
 
     // Relative to 8-ball position.
-    private static readonly Vector2[] StartPositionOffsets =
+    private static readonly Vector3[] StartPositionOffsets =
     {
-      new Vector2( 0.0f, -2.0f ),
-      new Vector2( -0.5f, -1.0f ), new Vector2( 0.5f, -1.0f ),
-      new Vector2( -1.0f, 0.0f ), new Vector2( 1.0f, 0.0f ),
-      new Vector2( -1.5f, 1.0f ), new Vector2( -0.5f, 1.0f ), new Vector2( 0.5f, 1.0f ), new Vector2( 1.5f, 1.0f ),
-      new Vector2( -2.0f, 2.0f ), new Vector2( -1.0f, 2.0f ), new Vector2( 0.0f, 2.0f ), new Vector2( 1.0f, 2.0f ), new Vector2( 2.0f, 2.0f )
+      new Vector3( 0.0f, 0.0f, -2.0f ),
+      new Vector3( -0.5f, 0.0f, -1.0f ), new Vector3( 0.5f, 0.0f, -1.0f ),
+      new Vector3( -1.0f, 0.0f, 0.0f ), new Vector3( 1.0f, 0.0f, 0.0f ),
+      new Vector3( -1.5f, 0.0f, 1.0f ), new Vector3( -0.5f, 0.0f, 1.0f ), new Vector3( 0.5f, 0.0f, 1.0f ), new Vector3( 1.5f, 0.0f, 1.0f ),
+      new Vector3( -2.0f, 0.0f, 2.0f ), new Vector3( -1.0f, 0.0f, 2.0f ), new Vector3( 0.0f, 0.0f, 2.0f ), new Vector3( 1.0f, 0.0f, 2.0f ), new Vector3( 2.0f, 0.0f, 2.0f )
     };
+
+    private static readonly Vector3 RandomPositionOffsetMask = new Vector3( 1f, 0f, 1f );
+    private static readonly float MaxRandomOffset = 0.005f;
 
     //-------------------------------------------------------------------------
 
@@ -65,6 +68,8 @@ namespace GameLib.Balls
     {
       int ballPositionOffsetIndex = 0;
 
+      System.Random random = new System.Random();
+
       foreach( Ball ball in balls.AllBalls )
       {
         if( ball.IsCueBall ||
@@ -73,8 +78,17 @@ namespace GameLib.Balls
           continue;
         }
 
-        ball.Position =
-          StartPositionOffsets[ ballPositionOffsetIndex++ ] * ball.Radius;
+        ball.Position = StartPositionOffsets[ ballPositionOffsetIndex++ ];
+        ball.Position *= ball.Radius;
+        ball.Position += tablePositions.EightBallStartPosition;
+
+        Vector3 randomOffset =
+          new Vector3(
+            (float)random.NextDouble() * MaxRandomOffset,
+            (float)random.NextDouble() * MaxRandomOffset,
+            (float)random.NextDouble() * MaxRandomOffset );
+        randomOffset = Vector2.Scale( randomOffset, RandomPositionOffsetMask );
+        ball.Position += randomOffset;
       }
     }
 

@@ -50,6 +50,23 @@ namespace GameLib_Test.Balls
     }
 
     //-------------------------------------------------------------------------
+    
+    [Test]
+    public void OtherBalls()
+    {
+      foreach( Ball ball in Balls.AllBalls )
+      {
+        if( ball.IsCueBall == false &&
+            ball.IsEightBall == false )
+        {
+          Assert.Greater(
+            ball.Position.magnitude,
+            0f );
+        }
+      }
+    }
+
+    //-------------------------------------------------------------------------
 
     [Test]
     public void HandleNullCueBall()
