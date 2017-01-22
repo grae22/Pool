@@ -46,5 +46,8 @@ exit /b %errorlevel%
  
 :RunLaunchReport
 start "report" "%~dp0\GeneratedReports\ReportGenerator Output\index.htm"
-pause
+choice /T 5 /D Y /M Close?
+if %errorlevel% equ 2 (
+  pause
+)
 exit /b %errorlevel%
