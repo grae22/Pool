@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net35\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.6.0\lib\net35\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -41,12 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BallCollection_Test.cs" />
-    <Compile Include="BallRacker_Test.cs" />
-    <Compile Include="BallSpawner_Test.cs" />
-    <Compile Include="Ball_Test.cs" />
-    <Compile Include="Mocks\BallCollection_Mock.cs" />
-    <Compile Include="Mocks\Table_Mock.cs" />
+    <Compile Include="Balls\BallCollection_Test.cs" />
+    <Compile Include="Balls\BallRacker_Test.cs" />
+    <Compile Include="Balls\BallSpawner_Test.cs" />
+    <Compile Include="Balls\Ball_Test.cs" />
+    <Compile Include="Balls\Mocks\BallCollection_Mock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +63,9 @@
       <Project>{8dccdf43-741c-47d6-8ae9-47294d3f55b7}</Project>
       <Name>GameLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tables\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

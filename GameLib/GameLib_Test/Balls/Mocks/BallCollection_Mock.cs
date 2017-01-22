@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using GameLib.Balls;
 
-namespace GameLib
+namespace GameLib_Test.Balls
 {
   class BallCollection_Mock : IBallCollection
   {

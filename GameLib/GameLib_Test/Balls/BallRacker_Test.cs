@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using Moq;
 using UnityEngine;
 using GameLib.Balls;
-using GameLib_Test.Mocks;
+using GameLib.Tables;
 
-namespace GameLib_Test
+namespace GameLib_Test.Balls
 {
   [TestFixture]
   class BallRacker_Test
@@ -13,17 +14,19 @@ namespace GameLib_Test
     //-------------------------------------------------------------------------
 
     private IBallCollection Balls;
-    private Table_Mock Table;
+    private Mock< ITablePositions > Table;
 
     //-------------------------------------------------------------------------
 
     [SetUp]
     public void Initialise()
     {
-      Table = new Table_Mock();
+      Table = new Mock< ITablePositions >();
+      Table.SetupGet( m => m.CueBallStartPosition ).Returns( new Vector3() );
+      Table.SetupGet( m => m.CueBallStartPosition ).Returns( new Vector3( 0f, 0f, 1f ) );
 
       BallSpawner.SpawnBalls( out Balls );
-      BallRacker.RackBalls( Balls, Table );
+      BallRacker.RackBalls( Balls, Table.Object );
     }
 
     //-------------------------------------------------------------------------
@@ -32,7 +35,7 @@ namespace GameLib_Test
     public void CueBallPosition()
     {
       Assert.AreEqual(
-        Table.CueBallStartPosition,
+        Table.Object.CueBallStartPosition,
         Balls.CueBall.Position );
     }
 
@@ -42,7 +45,7 @@ namespace GameLib_Test
     public void EightBallPosition()
     {
       Assert.AreEqual(
-        Table.EightBallStartPosition,
+        Table.Object.EightBallStartPosition,
         Balls.EightBall.Position );
     }
 
@@ -59,7 +62,7 @@ namespace GameLib_Test
 
       Assert.That(
         () =>
-          BallRacker.RackBalls( balls, Table ),
+          BallRacker.RackBalls( balls, Table.Object ),
           Throws.TypeOf< Exception >()
             .With.Message.EqualTo( "Null cue ball." ) );
     }
@@ -77,7 +80,7 @@ namespace GameLib_Test
 
       Assert.That(
         () =>
-          BallRacker.RackBalls( balls, Table ),
+          BallRacker.RackBalls( balls, Table.Object ),
           Throws.TypeOf< Exception >()
             .With.Message.EqualTo( "Null eight ball." ) );
     }

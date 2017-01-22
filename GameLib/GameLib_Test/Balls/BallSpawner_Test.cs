@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using GameLib.Balls;
 
-namespace GameLib_Test
+namespace GameLib_Test.Balls
 {
   [TestFixture]
   class BallSpawner_Test

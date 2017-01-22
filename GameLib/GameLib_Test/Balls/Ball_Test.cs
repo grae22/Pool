@@ -2,7 +2,7 @@
 using UnityEngine;
 using GameLib.Balls;
 
-namespace Game_Test
+namespace GameLib_Test.Balls
 {
   [TestFixture]
   class Ball_Test

@@ -3,7 +3,7 @@ using NUnit.Framework;
 using UnityEngine;
 using GameLib.Balls;
 
-namespace GameLib_Test
+namespace GameLib_Test.Balls
 {
   [TestFixture]
   class BallCollection_Test

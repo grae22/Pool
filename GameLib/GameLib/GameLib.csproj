@@ -43,8 +43,10 @@
     <Compile Include="Balls\IBallCollection.cs" />
     <Compile Include="Balls\IColouredBall.cs" />
     <Compile Include="Balls\INumberedBall.cs" />
+    <Compile Include="Tables\ITable.cs" />
     <Compile Include="Tables\ITablePositions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tables\PoolTable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
